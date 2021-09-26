@@ -16,10 +16,11 @@ app.get('/', logger.logTime,  (req, res) => {
   res.status(200).send("Hello World!")
 })
 
-app.get('/data', (req, res) => {
+app.get('/data', logger.logTime, (req, res) => {
   let outPut = {
     action: 'Give snacks',
-    toWhom: 'yourself'
+    toWhom: 'yourself',
+    time: req.timestamp
   }
   res.status(200).json(outPut);
 })

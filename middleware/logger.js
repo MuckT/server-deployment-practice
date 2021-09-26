@@ -1,11 +1,12 @@
 'use strict'
 
-const getTimeStamp = (req, res, next) => {
+const getTimestamp = (req, res, next) => {
   let stamp = +new Date
-  console.log(`Unix Timestamp: ${stamp}`)
+  req.timestamp = stamp
+  // console.log(`Unix Timestamp: ${stamp}`)
   next()
 }
 
 module.exports = {
-  logTime: getTimeStamp
+  logTime: getTimestamp
 }

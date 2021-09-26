@@ -41,7 +41,9 @@ describe('Given GET /data', () => {
 
     it('Then response obj is correct', async() => {
       const response = await request.get('/data')
-      expect(response.body).toEqual({action:"Give snacks",toWhom:"yourself"});
+      expect(response.body.action).toEqual('Give snacks')
+      expect(response.body.toWhom).toEqual('yourself')
+      expect(response.body.time).toBeCloseTo(+new Date, -1)
     })
   })
 })
