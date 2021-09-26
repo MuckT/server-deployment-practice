@@ -1,14 +1,20 @@
 'use strict'
 
 // Define error handler
-const errorHandler = (req, res, error) => {
-  res.status(500).send({
-    error: 500,
-    route: route.path,
-    query: req.query,
-    body: req.body,
-    message: `Server Error: ${error.message}`
-  })
+const errorHandler = (err, req, res, next) => {
+  if (res.headersSent) {
+    return next(err)
+  }
+  res.status(500)
+  res.json(
+    { 
+      error: err,
+      time: req.timestamp,
+      route: req.path,
+      query: req.query,
+      body: req.body,
+    }
+  )
 }
 
 // Export function(s)

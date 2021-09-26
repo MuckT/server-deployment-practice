@@ -32,6 +32,23 @@ describe('Given GET /iDoNotExist', () => {
   })
 })
 
+describe('Given GET /bad', () => {
+  describe('When requested', () => {
+    it('Then returns 500 status', async () => {
+      const response = await request.get('/bad')
+      expect(response.status).toEqual(500)
+    })
+
+    it('Then returns correct error obj', async () => {
+      const response = await request.get('/bad')
+      expect(response.body.error).toEqual('you\'ve messsed up')
+      expect(response.body.time).toBeCloseTo(+new Date, -1)
+      expect(response.body.route).toEqual('/bad')
+      expect(response.body.query).toEqual({})
+    })
+  })
+})
+
 describe('Given GET /data', () => {
   describe('When requested', () => {
     it('Then returns 200 status', async() => {
