@@ -16,6 +16,10 @@ app.get('/', logger.logTime,  (req, res) => {
   res.status(200).send("Hello World!")
 })
 
+app.get('/bad', logger.logTime, (req, res, next) => {
+  next('you\'ve messsed up')
+});
+
 app.get('/data', logger.logTime, (req, res) => {
   let outPut = {
     action: 'Give snacks',
