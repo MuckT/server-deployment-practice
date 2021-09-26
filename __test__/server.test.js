@@ -41,7 +41,7 @@ describe('Given GET /bad', () => {
 
     it('Then returns correct error obj', async () => {
       const response = await request.get('/bad')
-      expect(response.body.error).toEqual('you\'ve messsed up')
+      expect(response.body.error).toEqual('you\'ve messed up')
       expect(response.body.time).toBeCloseTo(+new Date, -1)
       expect(response.body.route).toEqual('/bad')
       expect(response.body.query).toEqual({})
