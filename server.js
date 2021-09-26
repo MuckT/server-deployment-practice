@@ -17,7 +17,7 @@ app.get('/', logger.logTime,  (req, res) => {
 })
 
 app.get('/bad', logger.logTime, (req, res, next) => {
-  next('you\'ve messsed up')
+  next('you\'ve messed up')
 });
 
 app.get('/data', logger.logTime, (req, res) => {
