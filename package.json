@@ -1,0 +1,28 @@
+{
+  "name": "server-deployment-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuckT/server-deployment-practice.git"
+  },
+  "author": "MuckT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MuckT/server-deployment-practice/issues"
+  },
+  "homepage": "https://github.com/MuckT/server-deployment-practice#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^27.2.2",
+    "supertest": "^6.1.6"
+  }
+}
